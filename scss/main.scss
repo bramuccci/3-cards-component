@@ -1,0 +1,125 @@
+:root {
+	--light-gray: hsl(0, 0%, 95%);
+	--orange: hsl(31, 77%, 52%);
+	--blue: hsl(184, 100%, 22%);
+	--green: hsl(179, 100%, 13%);
+	--paragraphs: hsla(0, 0%, 100%, 0.75);
+	font-size: 15px;
+}
+
+.card {
+	&--sedans {
+		--color-accent: var(--orange);
+	}
+	&--suvs {
+		--color-accent: var(--blue);
+	}
+	&--luxury {
+		--color-accent: var(--green);
+	}
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+img {
+	display: inline-block;
+}
+
+a,
+p,
+h2,
+button,
+a {
+	text-decoration: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+body {
+	background-color: var(--light-gray);
+	color: var(--paragraphs);
+	font-family: 'Lexend Deca', sans-serif;
+	line-height: 1.6;
+}
+
+.btn {
+	background-color: #fff;
+	border-radius: 5em;
+	color: var(--color-accent);
+	cursor: pointer;
+	padding: 1em 2em;
+
+	&:hover,
+	&:focus {
+		background-color: inherit;
+		color: #fff;
+		outline: 0.1em solid #fff;
+	}
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 85%;
+	max-width: 60em;
+	margin: 5em auto;
+	border-radius: 0.5rem;
+	overflow: hidden;
+
+	@media screen and (min-width: 800px) {
+		flex-direction: row;
+		margin: 10em auto;
+	}
+}
+
+.card {
+	background-color: var(--color-accent);
+	display: grid;
+	gap: 1em;
+	padding: 2.5em 2em;
+	justify-items: start;
+
+	h2 {
+		color: var(--light-gray);
+		font-family: 'Big Shoulders Display', cursive;
+		font-size: 2rem;
+		font-size: clamp(2rem, calc(1.5968rem + 1.6129vw), 2.5rem);
+		text-transform: uppercase;
+	}
+
+	img {
+		height: 2rem;
+	}
+
+	.btn {
+		margin-top: 1em;
+	}
+
+	@media screen and (min-width: 800px) {
+		padding: 3em;
+
+		img {
+			height: 2.5rem;
+		}
+
+		.btn {
+			margin-top: 5em;
+		}
+	}
+}
+
+//Atribution styles
+.attribution {
+	padding: 1em;
+	color: var(--blue);
+	text-align: center;
+	font-family: 'Big Shoulders Display', cursive;
+}
+.attribution a {
+	color: var(--orange);
+}
